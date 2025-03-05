@@ -1,0 +1,9 @@
+/* styling for the planet pages */
+.planet-back {
+    background-color: #0d0c0d;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

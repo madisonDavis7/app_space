@@ -1,6 +1,8 @@
 import React from 'react';
 import { IonPage, IonContent } from '@ionic/react';
 import ToolbarWithDropdown from './ToolbarWithDropdown';
+import './planet_pages.css'
+
 
 const Earth: React.FC = () => {
     return (
