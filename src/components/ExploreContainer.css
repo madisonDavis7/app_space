@@ -1,0 +1,244 @@
+.background-container {
+  z-index: 2;
+
+}
+
+.main-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  color: white;
+  background-color: #0d0c0d;
+  padding-bottom: 20%;
+  padding-top: 30%;
+}
+
+.stars,
+.twinkling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+/* title text*/
+
+.title-txt {
+  margin-bottom: 20px;
+  font-size: 3rem;
+  z-index: 2;
+}
+
+.wave-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.wave-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  z-index: 2;
+}
+
+/* organization */
+
+.nav-page {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d0c0d;
+  color: white;
+  padding-bottom: 20%;
+}
+
+.planet-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+/* planet buttons */
+.planet-btn {
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+  /* Add transition for smooth effect */
+
+}
+
+.planet-btn:hover {
+  transform: scale(1.1);
+
+}
+
+.planet-btn.mercury {
+  background-image: url('./images/mercury.png');
+  height: 80px;
+  width: 80px
+}
+
+.planet-btn.venus {
+  background-image: url('./images/venus.png');
+  height: 100px;
+  width: 100px;
+}
+
+.planet-btn.earth {
+  background-image: url('./images/earth.png');
+  height: 150px;
+  width: 150px;
+}
+
+.planet-btn.mars {
+  background-image: url('./images/mars.png');
+  height: 175px;
+  width: 175px;
+}
+
+.planet-btn.jupiter {
+  background-image: url('./images/jupiter.jpg');
+  height: 300px;
+  width: 300px;
+}
+
+.planet-btn.saturn {
+  background-image: url('./images/saturn.png');
+  background-size: contain;
+  height: 375px;
+  width: 375px;
+}
+
+.planet-btn.uranus {
+  background-image: url('./images/uranus.png');
+  height: 200px;
+  width: 200px;
+}
+
+.planet-btn.neptune {
+  background-image: url('./images/neptune.png');
+  height: 170px;
+  width: 170px;
+}
+
+/* animated text for title */
+.wave-text span {
+  display: inline-block;
+  font-size: 5rem;
+  animation: wave 2s ease-in-out infinite;
+}
+
+.wave-text span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.wave-text span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.wave-text span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.wave-text span:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.wave-text span:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.wave-text span:nth-child(6) {
+  animation-delay: 1s;
+}
+
+.wave-text span:nth-child(7) {
+  animation-delay: 1.2s;
+}
+
+.wave-text span:nth-child(8) {
+  animation-delay: 1.4s;
+}
+
+@keyframes wave {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.stars {
+  background: black url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
+  z-index: 0;
+  background-size: cover;
+
+}
+
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+  .main-cont {
+    padding-bottom: 20%;
+    padding-top: 20%;
+  }
+
+  .nav-page {
+    height: auto;
+    padding-bottom: 10%;
+  }
+
+  .title-txt {
+    font-size: 2rem;
+  }
+
+  .nav-title {
+    font-size: 1.5rem;
+  }
+
+  .planet-btn {
+    height: 60px;
+    width: 60px;
+  }
+
+  .planet-btn.venus,
+  .planet-btn.earth,
+  .planet-btn.mars,
+  .planet-btn.jupiter,
+  .planet-btn.saturn,
+  .planet-btn.uranus,
+  .planet-btn.neptune {
+    height: 80px;
+    width: 80px;
+  }
+}

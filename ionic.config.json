@@ -1,0 +1,7 @@
+{
+  "name": "app_space",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
