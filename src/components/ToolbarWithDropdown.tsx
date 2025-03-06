@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
-import { IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonPopover, IonList, IonItem } from '@ionic/react';
+import { IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonPopover, IonList, IonItem, IonMenuButton } from '@ionic/react';
 import { useHistory, Link } from 'react-router-dom';
 
 const ToolbarWithDropdown: React.FC = () => {
     const history = useHistory();
     const [showPopover, setShowPopover] = useState(false);
+    const [popoverEvent, setPopoverEvent] = useState<React.MouseEvent | undefined>(undefined);
 
     const handleNavigation = (destination: string) => {
         setShowPopover(false); // Close the popover
         history.push(destination);
+    };
+
+    const openPopover = (e: React.MouseEvent) => {
+        e.persist();
+        setPopoverEvent(e);
+        setShowPopover(true);
     };
 
     return (
@@ -16,18 +23,22 @@ const ToolbarWithDropdown: React.FC = () => {
             <IonHeader>
                 <IonToolbar>
                     <IonButtons slot="start">
-                        <IonButton onClick={() => setShowPopover(true)}>
-                            Menu
-                        </IonButton>
+                        <IonMenuButton menu="first" />
                     </IonButtons>
                     <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
                         <IonTitle>Home</IonTitle>
                     </Link>
+                    <IonButtons slot="end">
+                        <IonButton onClick={openPopover}>
+                            Menu
+                        </IonButton>
+                    </IonButtons>
                 </IonToolbar>
             </IonHeader>
 
             <IonPopover
                 isOpen={showPopover}
+                event={popoverEvent}
                 onDidDismiss={() => setShowPopover(false)}
             >
                 <IonList>

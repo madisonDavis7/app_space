@@ -6,4 +6,61 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: black url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.hist-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 10px;
+    height: 30vh;
+    width: 60vw;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.facts-cont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    justify-content: center;
+    width: 60vw;
+    height: 50vh;
+    margin-top: 20px;
+    margin-bottom: 10%;
+}
+
+.facts-cont>div {
+    border: 1px solid white;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.planet-img {
+    width: 200px;
+    height: 200px;
+    padding: 20px;
 }
