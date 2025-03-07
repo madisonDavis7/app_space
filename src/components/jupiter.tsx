@@ -9,7 +9,7 @@ const Jupiter: React.FC = () => {
             <ToolbarWithDropdown />
             <IonContent id="main-content">
                 <div className="planet-back">
-                    <div className="title">
+                    <div className="title jupiter">
                         <div className="wave-container">
                             <h1 className="wave-text">
                                 <span>J</span>
