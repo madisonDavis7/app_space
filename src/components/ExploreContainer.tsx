@@ -1,6 +1,5 @@
 import './ExploreContainer.css';
 import NavigationPage from './navigation';
-import ToolbarWithDropdown from './ToolbarWithDropdown';
 
 interface ContainerProps { }
 
