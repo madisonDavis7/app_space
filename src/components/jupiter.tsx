@@ -9,9 +9,21 @@ const Jupiter: React.FC = () => {
             <ToolbarWithDropdown />
             <IonContent id="main-content">
                 <div className="planet-back">
-                    <h1 className="title">Jupiter</h1>
-                    <div className="planet_img">
-                        <img className="planet-img" src={jupiterImage} alt='Mercury' />
+                    <div className="title">
+                        <div className="wave-container">
+                            <h1 className="wave-text">
+                                <span>J</span>
+                                <span>U</span>
+                                <span>P</span>
+                                <span>I</span>
+                                <span>T</span>
+                                <span>E</span>
+                                <span>R</span>
+                            </h1>
+                        </div>
+                    </div>
+                    <div className="planet_img jupiter">
+                        <img className="planet-img" src={jupiterImage} alt='Jupiter' />
                     </div>
                     <div className="hist-cont">
                         <p>Here is where a bunch of history and brief facts can go</p>

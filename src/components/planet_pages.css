@@ -34,6 +34,7 @@
     width: 60vw;
     font-size: 1.2rem;
     margin-top: 20px;
+
 }
 
 .facts-cont {
@@ -59,8 +60,25 @@
     text-align: center;
 }
 
-.planet-img {
-    width: 200px;
-    height: 200px;
+.planet_img.earth,
+.planet_img.mars,
+.planet_img.mercury,
+.planet_img.venus {
+    width: 250px;
+    height: 250px;
     padding: 20px;
+}
+
+.planet_img.jupiter,
+.planet_img.neptune,
+.planet_img.uranus {
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+}
+
+.planet_img.saturn {
+    padding: 20px;
+    width: 500px;
+    height: 500px;
 }

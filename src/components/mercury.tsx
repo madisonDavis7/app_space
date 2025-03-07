@@ -10,8 +10,20 @@ const Mercury: React.FC = () => {
             <ToolbarWithDropdown />
             <IonContent id="main-content">
                 <div className="planet-back">
-                    <h1 className="title">Mercury</h1>
-                    <div className="planet_img">
+                    <div className="title">
+                        <div className="wave-container">
+                            <h1 className="wave-text">
+                                <span>M</span>
+                                <span>E</span>
+                                <span>R</span>
+                                <span>C</span>
+                                <span>U</span>
+                                <span>R</span>
+                                <span>Y</span>
+                            </h1>
+                        </div>
+                    </div>
+                    <div className="planet_img mercury">
                         <img className="planet-img" src={mercuryImage} alt='Mercury' />
                     </div>
                     <div className="hist-cont">

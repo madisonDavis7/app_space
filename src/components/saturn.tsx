@@ -11,8 +11,19 @@ const Saturn: React.FC = () => {
             <ToolbarWithDropdown />
             <IonContent id="main-content">
                 <div className="planet-back">
-                    <h1 className="title">Saturn</h1>
-                    <div className="planet_img">
+                    <div className="title">
+                        <div className="wave-container">
+                            <h1 className="wave-text">
+                                <span>S</span>
+                                <span>A</span>
+                                <span>T</span>
+                                <span>U</span>
+                                <span>R</span>
+                                <span>N</span>
+                            </h1>
+                        </div>
+                    </div>
+                    <div className="planet_img saturn">
                         <img className="planet-img" src={saturnImage} alt='Mercury' />
                     </div>
                     <div className="hist-cont">

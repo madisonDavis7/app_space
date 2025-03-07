@@ -11,9 +11,19 @@ const Earth: React.FC = () => {
             <ToolbarWithDropdown />
             <IonContent id="main-content">
                 <div className="planet-back">
-                    <h1 className="title">Earth</h1>
-                    <div className="planet_img">
-                        <img className="planet-img" src={earthImage} alt='Mercury' />
+                    <div className="title">
+                        <div className="wave-container">
+                            <h1 className="wave-text">
+                                <span>E</span>
+                                <span>A</span>
+                                <span>R</span>
+                                <span>T</span>
+                                <span>H</span>
+                            </h1>
+                        </div>
+                    </div>
+                    <div className="planet_img earth">
+                        <img className="planet-img" src={earthImage} alt='Earth' />
                     </div>
                     <div className="hist-cont">
                         <p>Here is where a bunch of history and brief facts can go</p>
@@ -26,7 +36,7 @@ const Earth: React.FC = () => {
                     </div>
                 </div>
             </IonContent>
-        </IonPage>
+        </IonPage >
     );
 };
 

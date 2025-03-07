@@ -11,8 +11,18 @@ const Venus: React.FC = () => {
             <ToolbarWithDropdown />
             <IonContent id="main-content">
                 <div className="planet-back">
-                    <h1 className="title">Venus</h1>
-                    <div className="planet_img">
+                    <div className="title">
+                        <div className="wave-container">
+                            <h1 className="wave-text">
+                                <span>V</span>
+                                <span>E</span>
+                                <span>N</span>
+                                <span>U</span>
+                                <span>S</span>
+                            </h1>
+                        </div>
+                    </div>
+                    <div className="planet_img venus">
                         <img className="planet-img" src={venusImage} alt='Mercury' />
                     </div>
                     <div className="hist-cont">
