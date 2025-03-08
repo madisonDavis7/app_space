@@ -28,13 +28,15 @@ const Neptune: React.FC = () => {
                         <img className="planet-img" src={neptuneImage} alt='Mercury' />
                     </div>
                     <div className="hist-cont">
-                        <p>Here is where a bunch of history and brief facts can go</p>
+                        <p>Because of it's deep blue color Neptune was named after the Roman god of the sea. It was the
+                            first planet to be discovered using mathematics. It was discovered in 1846 by Urbain Le Verrier.
+                        </p>
                     </div>
                     <div className="facts-cont">
-                        <div>Fact 1</div>
-                        <div>Fact 2</div>
-                        <div>Fact 3</div>
-                        <div>Fact 4</div>
+                        <div>Radius: <i>49,528 km</i></div>
+                        <div>AU from Sun: <i>30</i></div>
+                        <div>Tilt: <i>28 deg</i></div>
+                        <div>Known moon: <i>16</i></div>
                     </div>
                 </div>
             </IonContent>

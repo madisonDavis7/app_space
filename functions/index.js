@@ -15,6 +15,7 @@ const dbRef = db.collection("facts").doc("current");
 //have a button that users push to generate current location
 //add a map using ionic
 exports.spaceAPI = onRequest(async (req, res) => {
+
     const response = await axios.get('http://api.open-notify.org/iss-now.json?callback=?'); //api endpoint
     dbRef.set({
         current: JSON.parse(response.data.slice(2, -1)), //make data more readable in db

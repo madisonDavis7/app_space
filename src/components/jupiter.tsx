@@ -26,13 +26,15 @@ const Jupiter: React.FC = () => {
                         <img className="planet-img" src={jupiterImage} alt='Jupiter' />
                     </div>
                     <div className="hist-cont">
-                        <p>Here is where a bunch of history and brief facts can go</p>
+                        <p>Jupiter is both the largest and oldest planet. It's namesake comes from the the king of gods,
+                            Jupiter, in Roman mythology. The first of the gas giants, Jupiter is made mainly of
+                            hydrogen and helium.  </p>
                     </div>
                     <div className="facts-cont">
-                        <div>Fact 1</div>
-                        <div>Fact 2</div>
-                        <div>Fact 3</div>
-                        <div>Fact 4</div>
+                        <div>Radius: <i>69,911 km</i></div>
+                        <div>AU from Sun: <i>5.2</i></div>
+                        <div>Tilt: <i>3 deg</i></div>
+                        <div>Known moons: <i>95</i></div>
                     </div>
                 </div>
             </IonContent>

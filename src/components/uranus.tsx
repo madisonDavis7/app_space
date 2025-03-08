@@ -27,13 +27,15 @@ const Uranus: React.FC = () => {
                         <img className="planet-img" src={uranusImage} alt='Mercury' />
                     </div>
                     <div className="hist-cont">
-                        <p>Here is where a bunch of history and brief facts can go</p>
+                        <p>Uranus was the first planet discovered with a telescope in 1781 by William Herschel. It was originally
+                            named "Georgium Sidus" after King George III. It was later renamed Uranus, the Greek god of the sky.
+                        </p>
                     </div>
                     <div className="facts-cont">
-                        <div>Fact 1</div>
-                        <div>Fact 2</div>
-                        <div>Fact 3</div>
-                        <div>Fact 4</div>
+                        <div>Radius: <i>25, 559 km</i></div>
+                        <div>AU from Sun: <i>19</i></div>
+                        <div>Tilt: <i>97.77 deg</i></div>
+                        <div>Known moons: <i>28</i></div>
                     </div>
                 </div>
             </IonContent>

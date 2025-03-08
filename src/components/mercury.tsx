@@ -27,13 +27,15 @@ const Mercury: React.FC = () => {
                         <img className="planet-img" src={mercuryImage} alt='Mercury' />
                     </div>
                     <div className="hist-cont">
-                        <p>Here is where a bunch of history and brief facts can go</p>
+                        <p>Mercury is named after the swiftest of the Roman gods due to it's qucik orbit. Being the
+                            closest planet to the sun, it has a very short year of only 88 Earth days.
+                        </p>
                     </div>
                     <div className="facts-cont">
-                        <div>Fact 1</div>
-                        <div>Fact 2</div>
-                        <div>Fact 3</div>
-                        <div>Fact 4</div>
+                        <div>Radius: <i>2,440 km</i></div>
+                        <div>AU from Sun: <i>0.4</i></div>
+                        <div>Tilt: <i>2 deg</i></div>
+                        <div>Known moonds: <i>0</i></div>
                     </div>
                 </div>
             </IonContent>

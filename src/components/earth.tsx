@@ -26,13 +26,16 @@ const Earth: React.FC = () => {
                         <img className="planet-img" src={earthImage} alt='Earth' />
                     </div>
                     <div className="hist-cont">
-                        <p>Here is where a bunch of history and brief facts can go</p>
+                        <p>Earth is the only planet to not have a name derived from Roman or Greek mythology, instead it means
+                            "the ground" and was taken from Old English and Germanic. It is the fifth largest planet in the solar system
+                            and the only planet with liquid water on its surface.
+                        </p>
                     </div>
                     <div className="facts-cont">
-                        <div>Fact 1</div>
-                        <div>Fact 2</div>
-                        <div>Fact 3</div>
-                        <div>Fact 4</div>
+                        <div>Diameter: <i>12,760 km</i></div>
+                        <div>AU from Sun: <i>1</i></div>
+                        <div>Tilt: <i>23.4 deg</i></div>
+                        <div>Known moons: <i>1</i></div>
                     </div>
                 </div>
             </IonContent>

@@ -4,9 +4,7 @@ import { MapContainer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 //import L from 'leaflet';
 
-
-
-
+//work in progress as in it dont work
 const MapPage: React.FC = () => {
     return (
         <MapContainer />

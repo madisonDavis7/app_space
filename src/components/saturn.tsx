@@ -27,13 +27,15 @@ const Saturn: React.FC = () => {
                         <img className="planet-img" src={saturnImage} alt='Mercury' />
                     </div>
                     <div className="hist-cont">
-                        <p>Here is where a bunch of history and brief facts can go</p>
+                        <p>Saturn was named after the Roman god of agriculture and wealth. It is the sixth planet from
+                            the sun and the second largest in the solar system.
+                        </p>
                     </div>
                     <div className="facts-cont">
-                        <div>Fact 1</div>
-                        <div>Fact 2</div>
-                        <div>Fact 3</div>
-                        <div>Fact 4</div>
+                        <div>Radius: <i>110, 250 km</i></div>
+                        <div>AU from Sun: <i>9.5</i></div>
+                        <div>Tilt: <i>26.73 deg</i></div>
+                        <div>Known moons: <i>146</i></div>
                     </div>
                 </div>
             </IonContent>
