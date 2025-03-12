@@ -1,5 +1,6 @@
 import './ExploreContainer.css';
 import NavigationPage from './navigation';
+import MapPage from './map';
 
 interface ContainerProps { }
 
@@ -29,6 +30,7 @@ const HomePage: React.FC = () => {
       <div className="stars"></div>
       <ExploreContainer />
       <NavigationPage />
+      <MapPage />
     </div>
   );
 };

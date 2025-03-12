@@ -11,6 +11,7 @@ import Jupiter from './components/jupiter';
 import Saturn from './components/saturn';
 import Uranus from './components/uranus';
 import Neptune from './components/neptune';
+import MapPage from './components/map'; // Import the MapPage component
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -45,6 +46,8 @@ const App: React.FC = () => (
         <Route path="/saturn" component={Saturn} />
         <Route path="/uranus" component={Uranus} />
         <Route path="/neptune" component={Neptune} />
+        <Route path="/navigation" component={NavigationPage} />
+        <Route path="/map" component={MapPage} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
