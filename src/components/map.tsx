@@ -6,12 +6,12 @@ import './ExploreContainer.css';
 
 // Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAsXmVz12P5UPwpvTX0Z-YtU5MMJ2_omFw",
-    authDomain: "fnof-stack-a31a1.firebaseapp.com",
-    projectId: "fnof-stack-a31a1",
-    storageBucket: "fnof-stack-a31a1.firebasestorage.app",
-    messagingSenderId: "807836240261",
-    appId: "1:807836240261:web:c23def03053759abc85cec"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY || '',
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN || '',
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID || '',
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET || '',
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID || '',
+    appId: process.env.REACT_APP_FIREBASE_APP_ID || ''
 };
 
 // Initialize Firebase
@@ -54,12 +54,13 @@ const MapPage: React.FC = () => {
             <h1 className="nav-title">Explore Where the ISS is Currently</h1>
             <div className="map-cord">
                 {issPosition && (
-                    <p>Latitude: {issPosition.lat} |   Longitude: {issPosition.lng}</p>
+                    <p>Latitude: {issPosition.lat} | Longitude: {issPosition.lng}</p>
                 )}
             </div>
-            <div className="map-wrapper"> {/* Container for the map */}
-                <LoadScript googleMapsApiKey="AIzaSyAgtikKX-38bAzwEwb0hVsC5ZdJblfe-pQ">
+            <div className="map-wrapper">
+                <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY || ''}>
                     <GoogleMap
+                        mapContainerStyle={{ width: '100%', height: '100%' }}
                         center={issPosition || center}
                         zoom={4}
                     >
