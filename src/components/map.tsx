@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { GoogleMap, LoadScript, Circle } from '@react-google-maps/api';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, doc, onSnapshot } from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore';
 import './ExploreContainer.css';
 
 // Firebase configuration
@@ -32,22 +32,31 @@ const MapPage: React.FC = () => {
     const [issPosition, setIssPosition] = useState<{ lat: number, lng: number } | null>(null);
     const [loading, setLoading] = useState(true); // Added loading state
 
-    useEffect(() => {
-        const unsubscribe = onSnapshot(doc(db, "facts", "current"), (doc) => {
-            if (doc.exists()) {
-                const data = doc.data().current;
-                const lat = parseFloat(data.iss_position.latitude);
-                const lng = parseFloat(data.iss_position.longitude);
-                setIssPosition({ lat, lng });
-                setLoading(false); // Stop loading once data is fetched
-                console.log('ISS Position updated:', { lat, lng }); // Debugging log
-            } else {
-                console.log('Document not found');
-                setLoading(false); // Stop loading if the document doesn't exist
+    const fetchISSPosition = async () => {
+        try {
+            console.log('Fetching ISS position...');
+            //wont work over https so need to use a CORS proxy to get around it 
+            const response = await fetch("http://api.open-notify.org/iss-now.json"); // Replace with your API endpoint
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
-        });
+            const data = await response.json();
+            const lat = parseFloat(data.iss_position.latitude);
+            const lng = parseFloat(data.iss_position.longitude);
+            setIssPosition({ lat, lng });
+            setLoading(false); // Stop loading once data is fetched
+            console.log('ISS Position updated:', { lat, lng }); // Debugging log
+        } catch (error) {
+            console.error('Error fetching ISS position:', error);
+            setLoading(false); // Stop loading if there is an error
+        }
+    };
 
-        return () => unsubscribe();
+    useEffect(() => {
+        fetchISSPosition(); // Fetch initial position
+        const intervalId = setInterval(fetchISSPosition, 5000); // Fetch new position every 5 seconds
+
+        return () => clearInterval(intervalId); // Clear interval on component unmount
     }, []);
 
     if (loading) {
@@ -64,7 +73,7 @@ const MapPage: React.FC = () => {
                     <p>Latitude: {issPosition.lat} | Longitude: {issPosition.lng}</p>
                 )}
             </div>
-            <div className="map-wrapper" style={{ backgroundColor: 'lightgray' }}> {/* Temporary background color for debugging */}
+            <div className="map-wrapper">
                 <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY!}>
                     <GoogleMap
                         mapContainerStyle={containerStyle}
@@ -74,12 +83,12 @@ const MapPage: React.FC = () => {
                         {issPosition && (
                             <Circle
                                 center={issPosition}
-                                radius={100000} // Radius in meters
+                                radius={5000} // Radius in meters
                                 options={{
-                                    strokeColor: "#e410e7",
+                                    strokeColor: "#FF0000",
                                     strokeOpacity: 0.8,
                                     strokeWeight: 8,
-                                    fillColor: "#e410e7",
+                                    fillColor: "#FF0000",
                                     fillOpacity: 0.35,
                                 }}
                             />
