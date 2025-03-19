@@ -28,6 +28,12 @@ const center = {
     lng: 0
 };
 
+// Fixed location for the Circle
+const fixedLocation = {
+    lat: 37.7749,
+    lng: -122.4194
+};
+
 const MapPage: React.FC = () => {
     const [issPosition, setIssPosition] = useState<{ lat: number, lng: number } | null>(null);
     const [loading, setLoading] = useState(true); // Added loading state
@@ -35,14 +41,10 @@ const MapPage: React.FC = () => {
     const fetchISSPosition = async () => {
         try {
             console.log('Fetching ISS position...');
-            //wont work over https so need to use a CORS proxy to get around it 
-            const response = await fetch("http://api.open-notify.org/iss-now.json"); // Replace with your API endpoint
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
+            const response = await fetch("https://api.wheretheiss.at/v1/satellites/25544");
             const data = await response.json();
-            const lat = parseFloat(data.iss_position.latitude);
-            const lng = parseFloat(data.iss_position.longitude);
+            const lat = data.latitude;
+            const lng = data.longitude;
             setIssPosition({ lat, lng });
             setLoading(false); // Stop loading once data is fetched
             console.log('ISS Position updated:', { lat, lng }); // Debugging log
@@ -59,11 +61,20 @@ const MapPage: React.FC = () => {
         return () => clearInterval(intervalId); // Clear interval on component unmount
     }, []);
 
+    useEffect(() => {
+        if (issPosition) {
+            console.log('Rendering Circle with ISS Position:', issPosition);
+        } else {
+            console.error('Circle not rendered: ISS Position is null');
+        }
+    }, [issPosition]);
+
     if (loading) {
         return <div>Loading...</div>; // Add loading message while data is fetched
     }
 
     console.log('Rendering GoogleMap with ISS Position:', issPosition);
+    console.log('Rendering Circle at Fixed Location:', fixedLocation);
 
     return (
         <div className="map-container">
@@ -80,18 +91,26 @@ const MapPage: React.FC = () => {
                         center={issPosition || center}
                         zoom={4}
                     >
+                        
                         {issPosition && (
-                            <Circle
-                                center={issPosition}
-                                radius={5000} // Radius in meters
-                                options={{
-                                    strokeColor: "#FF0000",
-                                    strokeOpacity: 0.8,
-                                    strokeWeight: 8,
-                                    fillColor: "#FF0000",
-                                    fillOpacity: 0.35,
-                                }}
-                            />
+                            <>
+                                {console.log('Rendering Circle with ISS Location:', issPosition)}
+                                <Circle
+                                //wont render in a local server need to use firebase serve to see it
+                                    center={issPosition}
+                                    radius={80000} // Radius in meters
+                                    options={{
+                                        strokeColor: "#e63674",
+                                        strokeOpacity: 1,
+                                        strokeWeight: 10,
+                                        fillColor: "#e63674",
+                                        fillOpacity: 0.35,
+                                        zIndex: 3 // Ensure the circle is on top
+                                    }}
+                                    onLoad={() => console.log('Circle loaded')}
+                                    onUnmount={() => console.log('Circle unmounted')}
+                                />
+                            </>
                         )}
                     </GoogleMap>
                 </LoadScript>
