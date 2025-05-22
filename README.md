@@ -1,4 +1,6 @@
-Cool space app using react, ionic, and firebase
-See pretty planets and learn something new
-:)
-https://fnof-stack-a31a1.web.app/home
+Celestia
+
+-----------------------------
+This was an app created for my Web Dev class. It uses Ionic, React, and Firebase. I wanted it to be a simple informative webb app that was more focused on
+visuals. It was meant to be easy to navigate, minimalistic, and appealing to look at. 
+
